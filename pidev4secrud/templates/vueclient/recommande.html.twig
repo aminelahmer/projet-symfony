@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1><strong>Rendez-vous pour le planning : </strong>{{ planning.programme }}</h1>
+
+    {{ form_start(recommande_form) }}
+        {{ form_row(recommande_form.dateRdv) }}
+        {{ form_row(recommande_form.timeRdv) }}
+        <button type="submit" class="btn btn-success">Confirmer le rendez-vous</button>
+    {{ form_end(recommande_form) }}
+
+    <a href="{{ path('app_main_show', {'id': planning.IdPlanning}) }}">Retour </a>
+{% endblock %}
